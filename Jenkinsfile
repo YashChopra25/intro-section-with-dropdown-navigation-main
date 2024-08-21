@@ -7,10 +7,11 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Docker ') {
-            agent {
+        stage('Docker images') {
+             agent {
                 docker {
                     image 'node:18-alpine'
+                    reuseNode true
                 }
             }
             steps {
